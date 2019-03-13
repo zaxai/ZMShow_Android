@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- A 'parent' preference, which enables/disables child preferences (below)
+         when checked/unchecked. -->
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="local_play_progress"
+        android:title="@string/pref_title_play_progress" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="local_auto_select"
+        android:title="@string/pref_title_auto_select" />
+
+</PreferenceScreen>

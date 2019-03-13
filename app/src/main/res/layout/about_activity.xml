@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+    <ImageButton
+        android:id="@+id/about_back"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@color/colorTransparent"
+        android:contentDescription="@string/about_description_back"
+        app:srcCompat="@drawable/ic_zmshow_btn_back_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/about_logo"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:contentDescription="@string/about_description_logo"
+        app:srcCompat="@drawable/ic_zmshow_image_logo"
+        app:layout_constraintTop_toBottomOf="@id/about_back"/>
+    <TextView
+        android:id="@+id/about_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:singleLine="true"
+        android:textColor="@color/colorDarkGray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/about_logo" />
+    <TextView
+        android:id="@+id/about_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_version"
+        android:textSize="18sp"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/about_name" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/about_version"
+        app:layout_constraintBottom_toTopOf="@id/about_copyright">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/ic_zmshow_divider"
+            android:orientation="vertical"
+            android:padding="36dp"
+            android:showDividers="beginning|middle|end">
+
+            <TextView
+                android:id="@+id/about_introduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_zmshow_btn_turn"
+                android:drawableRight="@drawable/ic_zmshow_btn_turn"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/about_text_introduce"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/about_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_zmshow_btn_turn"
+                android:drawableRight="@drawable/ic_zmshow_btn_turn"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@string/about_text_update"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/about_copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_text_copyright"
+        android:textSize="12sp"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/about_reserved" />
+    <TextView
+        android:id="@+id/about_reserved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/about_text_reserved"
+        android:textSize="12sp"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</android.support.constraint.ConstraintLayout>

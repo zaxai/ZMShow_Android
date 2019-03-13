@@ -1,0 +1,15 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="com.zaxai.zmshow.SettingsActivity$NetworkPreferenceFragment"
+        android:icon="@drawable/ic_zmshow_nav_network"
+        android:title="@string/pref_header_network" />
+
+    <header
+        android:fragment="com.zaxai.zmshow.SettingsActivity$LocalPreferenceFragment"
+        android:icon="@drawable/ic_zmshow_nav_local"
+        android:title="@string/pref_header_local" />
+
+</preference-headers>

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">ZMShow</string>
+    <string name="app_full_name">Zaxai Media Show</string>
+    <string name="app_version">Version 1.0.0</string>
+
+    <string name="about_text_introduce">功能介绍</string>
+    <string name="about_text_update">版本更新</string>
+    <string name="about_text_copyright">最赛网 版权所有</string>
+    <string name="about_text_reserved">Copyright © Since 2009 Zaxai.Com All Rights Reserved</string>
+    <string name="about_description_back">Back</string>
+    <string name="about_description_logo">Logo</string>
+
+    <string name="about_introduce_text_introduce">V1.0.0更新：\n初始版本</string>
+
+    <string name="item_description_folder">Folder</string>
+    <string name="item_description_me">Me</string>
+    <string name="item_description_media">Media</string>
+
+    <string name="network_description_back">Back</string>
+    <string name="network_description_forward">Forward</string>
+    <string name="network_description_browse">Browse</string>
+    <string name="network_description_refresh">Refresh</string>
+    <string name="network_edit_hint_text">请输入网址</string>
+
+    <string name="title_network">网络</string>
+    <string name="title_local">本地</string>
+    <string name="title_me">我</string>
+    <string name="title_settings">设置</string>
+
+    <string name="exo_titles_back_description">Back</string>
+    <string name="exo_titles_orientation_description">Orientation</string>
+
+    <string name="suggest_text_mail">官方邮箱：zax@zaxai.com</string>
+    <string name="suggest_edit_hint_text">请写下您的宝贵意见</string>
+    <string name="suggest_button_submit">复制并跳转到浏览器发送邮件</string>
+
+    <string name="share_radio_zaxai">最赛官网</string>
+    <string name="share_radio_baidu">百度网盘</string>
+    <string name="share_description_share">Share</string>
+
+    <string name="splash_description_logo">Logo</string>
+    <!-- Strings related to Settings -->
+
+    <!-- Example Network settings -->
+    <string name="pref_header_network">网络</string>
+
+    <string name="pref_title_url">主页</string>
+    <string name="pref_default_url">www.iqiyi.com</string>
+
+
+    <!-- Example Local settings -->
+    <string name="pref_header_local">本地</string>
+
+    <string name="pref_title_play_progress">记住播放进度</string>
+    <string name="pref_title_auto_select">文件夹智能筛选</string>
+</resources>
