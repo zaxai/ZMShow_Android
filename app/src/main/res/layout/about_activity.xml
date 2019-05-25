@@ -75,17 +75,39 @@
                 android:textColor="@color/colorDarkGray"
                 android:textSize="18sp" />
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/about_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/ic_zmshow_btn_turn"
-                android:drawableRight="@drawable/ic_zmshow_btn_turn"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:text="@string/about_text_update"
-                android:textColor="@color/colorDarkGray"
-                android:textSize="18sp" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="@string/about_text_update"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/about_update_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/about_description_update"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_zmshow_image_dot"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:contentDescription="@string/about_description_update"
+                    app:srcCompat="@drawable/ic_zmshow_btn_turn"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
     <TextView

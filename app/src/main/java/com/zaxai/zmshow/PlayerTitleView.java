@@ -36,20 +36,13 @@ public class PlayerTitleView extends FrameLayout {
             public void onClick(View v) {
                 switch(mScreenOrientation){
                     case ActivityInfo.SCREEN_ORIENTATION_SENSOR:{
-                        ((Activity)context).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                        mOrientation.setImageResource(R.drawable.exo_titles_orientation_landscape);
-                        mScreenOrientation=ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
-                        Toast.makeText(context,"横屏",Toast.LENGTH_SHORT).show();
+                        ((Activity)context).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+                        mOrientation.setImageResource(R.drawable.exo_titles_orientation_locked);
+                        mScreenOrientation=ActivityInfo.SCREEN_ORIENTATION_LOCKED;
+                        Toast.makeText(context,"锁定旋转",Toast.LENGTH_SHORT).show();
                     }
                     break;
-                    case ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE:{
-                        ((Activity)context).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                        mOrientation.setImageResource(R.drawable.exo_titles_orientation_portrait);
-                        mScreenOrientation=ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
-                        Toast.makeText(context,"竖屏",Toast.LENGTH_SHORT).show();
-                    }
-                    break;
-                    case ActivityInfo.SCREEN_ORIENTATION_PORTRAIT:{
+                    case ActivityInfo.SCREEN_ORIENTATION_LOCKED:{
                         ((Activity)context).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
                         mOrientation.setImageResource(R.drawable.exo_titles_orientation_sensor);
                         mScreenOrientation=ActivityInfo.SCREEN_ORIENTATION_SENSOR;

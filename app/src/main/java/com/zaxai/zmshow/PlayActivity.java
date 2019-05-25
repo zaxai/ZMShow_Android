@@ -197,10 +197,9 @@ public class PlayActivity extends AppCompatActivity {
 
     private void setFinalPlayedMediaItem(int windowIndex){
         List<MediaItem> mediaItemList=mMediaItemDB.select("SELECT * FROM MediaItem WHERE IsFinalPlayed =1");
-        for(MediaItem mediaItem:mediaItemList){
+        for(MediaItem mediaItem:mediaItemList)
             mediaItem.setFinalPlayed(0);
-            mMediaItemDB.update(mediaItem);
-        }
+        mMediaItemDB.update(mediaItemList);
         mFolderItem.getMediaItemList().get(windowIndex).setFinalPlayed(1);
         mMediaItemDB.update(mFolderItem.getMediaItemList().get(windowIndex));
     }

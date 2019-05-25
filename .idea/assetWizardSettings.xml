@@ -131,8 +131,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_btn_turn" />
-                            <entry key="sourceFile" value="F:\临时文件\turn.svg" />
+                            <entry key="outputName" value="exo_titles_orientation_locked" />
+                            <entry key="sourceFile" value="F:\临时文件\lockscreenrotation.svg" />
                           </map>
                         </option>
                       </PersistentState>

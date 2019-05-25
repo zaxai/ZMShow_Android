@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +33,7 @@ public class FolderItemDB {
     }
 
     public long insertFull(FolderItem folderItem){
-        for(MediaItem mediaItem:folderItem.getMediaItemList())
-            mMediaItemDB.insert(mediaItem);
+        mMediaItemDB.insert(folderItem.getMediaItemList());
         return insert(folderItem);
     }
 
@@ -46,8 +44,7 @@ public class FolderItemDB {
 
     public int deleteFull(FolderItem folderItem){
         List<MediaItem> mediaItemList=mMediaItemDB.select(String.format("SELECT * FROM MediaItem WHERE FolderItemID=%d",folderItem.getID()));
-        for (MediaItem mediaItem : mediaItemList)
-            mMediaItemDB.delete(mediaItem);
+        mMediaItemDB.delete(mediaItemList);
         return delete(folderItem);
     }
 
@@ -63,8 +60,7 @@ public class FolderItemDB {
     }
 
     public int updateFull(FolderItem folderItem){
-        for(MediaItem mediaItem:folderItem.getMediaItemList())
-            mMediaItemDB.update(mediaItem);
+        mMediaItemDB.update(folderItem.getMediaItemList());
         return update(folderItem);
     }
 

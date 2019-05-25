@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ZMShow</string>
     <string name="app_full_name">Zaxai Media Show</string>
-    <string name="app_version">Version 1.0.0</string>
+    <string name="app_version">Version 1.0.1</string>
 
     <string name="about_text_introduce">功能介绍</string>
     <string name="about_text_update">版本更新</string>
@@ -9,8 +9,9 @@
     <string name="about_text_reserved">Copyright © Since 2009 Zaxai.Com All Rights Reserved</string>
     <string name="about_description_back">Back</string>
     <string name="about_description_logo">Logo</string>
+    <string name="about_description_update">Update</string>
 
-    <string name="about_introduce_text_introduce">V1.0.0更新：\n初始版本</string>
+    <string name="about_introduce_text_introduce">加载中…</string>
 
     <string name="item_description_folder">Folder</string>
     <string name="item_description_me">Me</string>

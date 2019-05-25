@@ -33,9 +33,39 @@ public class MediaItemDB {
         return db.insert("MediaItem",null,values);
     }
 
+    public void insert(List<MediaItem> mediaItemList){
+        SQLiteDatabase db=mHelper.getWritableDatabase();
+        db.beginTransaction();
+        for(MediaItem mediaItem:mediaItemList) {
+            ContentValues values = new ContentValues();
+            values.put("ID", mediaItem.getID());
+            values.put("Position", mediaItem.getPosition());
+            values.put("Path", mediaItem.getItemPath());
+            values.put("Name", mediaItem.getItemName());
+            values.put("Info", mediaItem.getItemInfo());
+            values.put("ImageID", mediaItem.getImageID());
+            values.put("FolderItemID", mediaItem.getFolderItemID());
+            values.put("LastPlayPositionMs", mediaItem.getLastPlayPositionMs());
+            values.put("IsFinalPlayed", mediaItem.isFinalPlayed());
+            db.insert("MediaItem", null, values);
+        }
+        db.setTransactionSuccessful();
+        db.endTransaction();
+    }
+
     public int delete(MediaItem mediaItem){
         SQLiteDatabase db=mHelper.getWritableDatabase();
         return db.delete("MediaItem","ID=?", new String[]{String.format("%d", mediaItem.getID())});
+    }
+
+    public void delete(List<MediaItem> mediaItemList){
+        SQLiteDatabase db=mHelper.getWritableDatabase();
+        db.beginTransaction();
+        for(MediaItem mediaItem:mediaItemList) {
+            db.delete("MediaItem", "ID=?", new String[]{String.format("%d", mediaItem.getID())});
+        }
+        db.setTransactionSuccessful();
+        db.endTransaction();
     }
 
     public int update(MediaItem mediaItem){
@@ -50,6 +80,25 @@ public class MediaItemDB {
         values.put("LastPlayPositionMs",mediaItem.getLastPlayPositionMs());
         values.put("IsFinalPlayed",mediaItem.isFinalPlayed());
         return db.update("MediaItem", values, "ID=?", new String[]{String.format("%d", mediaItem.getID())});
+    }
+
+    public void update(List<MediaItem> mediaItemList){
+        SQLiteDatabase db=mHelper.getWritableDatabase();
+        db.beginTransaction();
+        for(MediaItem mediaItem:mediaItemList) {
+            ContentValues values = new ContentValues();
+            values.put("Position", mediaItem.getPosition());
+            values.put("Path", mediaItem.getItemPath());
+            values.put("Name", mediaItem.getItemName());
+            values.put("Info", mediaItem.getItemInfo());
+            values.put("ImageID", mediaItem.getImageID());
+            values.put("FolderItemID", mediaItem.getFolderItemID());
+            values.put("LastPlayPositionMs", mediaItem.getLastPlayPositionMs());
+            values.put("IsFinalPlayed", mediaItem.isFinalPlayed());
+            db.update("MediaItem", values, "ID=?", new String[]{String.format("%d", mediaItem.getID())});
+        }
+        db.setTransactionSuccessful();
+        db.endTransaction();
     }
 
     public List<MediaItem> select(String sql){
@@ -96,9 +145,7 @@ public class MediaItemDB {
 
     static public void sortPosition(Context context,List<MediaItem> mediaItemList){
         MediaItemDB mediaItemDB=new MediaItemDB(context);
-        for(MediaItem mediaItem:mediaItemList){
-            mediaItemDB.update(mediaItem);
-        }
+        mediaItemDB.update(mediaItemList);
     }
 
 }

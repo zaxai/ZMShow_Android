@@ -8,8 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -18,6 +27,7 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_activity);
         initView();
+        checkUpdate();
     }
 
     public static void actionStart(Context context){
@@ -46,13 +56,42 @@ public class AboutActivity extends AppCompatActivity {
                 AboutIntroduceActivity.actionStart(AboutActivity.this);
             }
         });
-        TextView update=findViewById(R.id.about_update);
+        LinearLayout update=findViewById(R.id.about_update);
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("http://www.zaxai.com/zmshow/android/"));
                 startActivity(intent);
+            }
+        });
+    }
+
+    public void checkUpdate(){
+        HttpUtil.sendOkHttpRequest("http://www.zaxai.com/zmshow/android/update.json", new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final String responseData = response.body().string();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            JSONObject jsonObject = new JSONObject(responseData);
+                            int latestVersion = Integer.parseInt(jsonObject.getString("version code"));
+                            if (latestVersion > BuildConfig.VERSION_CODE) {
+                                ImageView updateDot = findViewById(R.id.about_update_dot);
+                                updateDot.setVisibility(View.VISIBLE);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
             }
         });
     }
