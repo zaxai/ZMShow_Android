@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
@@ -83,9 +84,14 @@ public class NetworkFragment extends Fragment {
         mToolbar=mContentView.findViewById(R.id.network_toolbar);
         mProgressBar=mContentView.findViewById(R.id.network_progressbar);
         mWebView=mContentView.findViewById(R.id.network_webview);
-        mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new NetworkWebViewClient());
         mWebView.setWebChromeClient(new NetworkWebChromeClient());
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.getSettings().setSupportZoom(true);
+        mWebView.getSettings().setUseWideViewPort(true);
+        mWebView.getSettings().setLoadWithOverviewMode(true);
+        mWebView.getSettings().setBuiltInZoomControls(true);
+        mWebView.getSettings().setDisplayZoomControls(false);
         mEditText=mContentView.findViewById(R.id.network_url);
         mEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -117,7 +123,7 @@ public class NetworkFragment extends Fragment {
         });
         if(TextUtils.isEmpty(mUrl)){
             SharedPreferences preferences=PreferenceManager.getDefaultSharedPreferences(getContext());
-            mUrl=preferences.getString("network_default_url","www.iqiyi.com");
+            mUrl=preferences.getString("network_default_url","www.zaxai.com");
             if (mUrl.indexOf("http://") != 0 && mUrl.indexOf("https://") != 0) {
                 mUrl = "http://" + mUrl;
             }

@@ -86,8 +86,8 @@ public class ShareActivity extends AppCompatActivity {
                             case SHARE_TAG_LINK: {
                                 String link="";
                                 switch(mRadioGroup.getCheckedRadioButtonId()){
-                                    case R.id.share_zaxai: link="http://www.zaxai.com/zmshow/android/";break;
-                                    case R.id.share_baidu: link="网盘地址 https://pan.baidu.com/s/1XlRzYlnHQrowlvxvKoI4IQ 提取码 1fbh";break;
+                                    case R.id.share_zaxai: link="http://www.zaxai.com/resource.php?resid=81";break;
+                                    case R.id.share_baidu: link="网盘地址 https://pan.baidu.com/s/1kD7V3lsMBILPdCMSTfmUDg 提取码：vh9w";break;
                                     default:break;
                                 }
                                 ClipboardManager clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);

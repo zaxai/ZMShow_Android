@@ -61,14 +61,14 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://www.zaxai.com/zmshow/android/"));
+                intent.setData(Uri.parse("http://www.zaxai.com/resource.php?resid=81"));
                 startActivity(intent);
             }
         });
     }
 
     public void checkUpdate(){
-        HttpUtil.sendOkHttpRequest("http://www.zaxai.com/zmshow/android/update.json", new Callback() {
+        HttpUtil.sendOkHttpRequest("http://www.zaxai.com/download/zmshow/android/update.json", new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 

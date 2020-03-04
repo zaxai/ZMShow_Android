@@ -59,7 +59,7 @@ public class AboutIntroduceActivity extends AppCompatActivity {
     }
 
     public void getIntroduce(){
-        HttpUtil.sendOkHttpRequest("http://www.zaxai.com/zmshow/android/introduce.json", new Callback() {
+        HttpUtil.sendOkHttpRequest("http://www.zaxai.com/download/zmshow/android/introduce.json", new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 runOnUiThread(new Runnable() {
